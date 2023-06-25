@@ -1,4 +1,4 @@
-package org.example.model;
+package org.animalwatch.model;
 
 public record Cat(
         int id,

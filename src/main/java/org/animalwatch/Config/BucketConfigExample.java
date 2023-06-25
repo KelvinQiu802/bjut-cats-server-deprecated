@@ -1,4 +1,4 @@
-package org.example.Config;
+package org.animalwatch.Config;
 
 public class BucketConfigExample {
     public static String accessKey = "";

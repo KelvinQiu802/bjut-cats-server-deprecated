@@ -1,7 +1,7 @@
-package org.example;
+package org.animalwatch;
 
 import io.javalin.Javalin;
-import org.example.controller.ImageUploadTokenController;
+import org.animalwatch.controller.ImageUploadTokenController;
 
 public class Main {
     public static void main(String[] args) {

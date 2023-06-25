@@ -1,9 +1,9 @@
-package org.example.controller;
+package org.animalwatch.controller;
 
 import com.qiniu.util.Auth;
 import io.javalin.http.Context;
-import org.example.Config.BucketConfig;
-import org.example.model.ImageUploadToken;
+import org.animalwatch.Config.BucketConfig;
+import org.animalwatch.model.ImageUploadToken;
 
 public class ImageUploadTokenController {
     private String accessKey = BucketConfig.accessKey;

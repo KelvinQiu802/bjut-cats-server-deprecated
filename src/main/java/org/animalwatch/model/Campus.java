@@ -1,4 +1,4 @@
-package org.example.model;
+package org.animalwatch.model;
 
 public enum Campus {
     本部,
