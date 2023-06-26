@@ -19,7 +19,7 @@ public class CatsDao {
         try (
                 Connection conn = DBUtils.connectToDB();
                 PreparedStatement st = conn.prepareStatement("INSERT INTO cats VALUES (?, ? ,? ,? ,?, ? ,? ,? ,?, ? ," +
-                        "?, ?, ?, ?, ?, ?);")
+                        "?, ?, ?, ?, ?, ?, ?);")
         ) {
             st.setInt(1, cat.id());
             st.setString(2, cat.name());
@@ -37,6 +37,7 @@ public class CatsDao {
             st.setDouble(14, cat.longitude());
             st.setDouble(15, cat.latitude());
             st.setInt(16, cat.orderWeight());
+            st.setString(17, cat.image());
             st.executeUpdate();
         } catch (SQLException e) {
             logger.error("Unable to connect to the database or operation failed.", e);
@@ -80,6 +81,7 @@ public class CatsDao {
                 rs.getString("name"),
                 Campus.valueOf(rs.getString("campus")),
                 rs.getString("avatar"),
+                rs.getString("image"),  // TODO: 到时候删掉
                 Gender.valueOf(rs.getString("gender")),
                 rs.getString("color"),
                 rs.getString("hair"),

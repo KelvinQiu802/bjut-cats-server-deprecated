@@ -5,6 +5,7 @@ public record Cat(
         String name,
         Campus campus,
         String avatar,
+        String image,  // TODO: 等把image迁移到新的表就可以删掉
         Gender gender,
         String color,
         String hair,
