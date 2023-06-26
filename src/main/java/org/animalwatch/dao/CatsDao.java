@@ -13,7 +13,35 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CatsDao {
-    private Logger logger = LoggerFactory.getLogger(CatsDao.class);
+    private final Logger logger = LoggerFactory.getLogger(CatsDao.class);
+
+    public void insertCat(Cat cat) {
+        try (
+                Connection conn = DBUtils.connectToDB();
+                PreparedStatement st = conn.prepareStatement("INSERT INTO cats VALUES (?, ? ,? ,? ,?, ? ,? ,? ,?, ? ," +
+                        "?, ?, ?, ?, ?, ?);")
+        ) {
+            st.setInt(1, cat.id());
+            st.setString(2, cat.name());
+            st.setString(3, cat.campus().toString());
+            st.setString(4, cat.avatar());
+            st.setString(5, cat.gender().toString());
+            st.setString(6, cat.color());
+            st.setString(7, cat.hair());
+            st.setString(8, cat.neutered().toString());
+            st.setString(9, cat.state().toString());
+            st.setString(10, cat.description());
+            st.setString(11, cat.birthday());
+            st.setString(12, cat.adoptionDay());
+            st.setString(13, cat.position());
+            st.setDouble(14, cat.longitude());
+            st.setDouble(15, cat.latitude());
+            st.setInt(16, cat.orderWeight());
+            st.executeUpdate();
+        } catch (SQLException e) {
+            logger.error("Unable to connect to the database or operation failed.", e);
+        }
+    }
 
     public List<Cat> getAllCats() {
         List<Cat> cats = new ArrayList<>();

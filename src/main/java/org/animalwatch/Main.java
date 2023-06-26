@@ -22,6 +22,8 @@ public class Main {
 
         app.get("/api/cats", catController::getAllCats);
 
+        app.post("/api/cats", catController::createCat);
+
         app.delete("/api/cats", catController::removeAllCats);
     }
 }
