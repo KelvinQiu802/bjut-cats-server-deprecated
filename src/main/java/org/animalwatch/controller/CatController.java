@@ -12,6 +12,7 @@ public class CatController {
     }
 
     public void getAllCats(Context ctx) {
+        catsDao.getAllCats();
         ctx.json(catsDao.getAllCats());
     }
 

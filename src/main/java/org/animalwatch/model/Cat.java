@@ -8,7 +8,7 @@ public record Cat(
         Gender gender,
         String color,
         String hair,
-        Neutered nutered,
+        Neutered neutered,
         CatState state,
         String description,
         String birthday,
