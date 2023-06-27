@@ -4,6 +4,7 @@ import io.javalin.Javalin;
 import io.javalin.plugin.bundled.CorsPluginConfig;
 import org.animalwatch.controller.CatController;
 import org.animalwatch.controller.ImageUploadTokenController;
+import org.animalwatch.controller.UserController;
 import org.animalwatch.controller.WxLoginController;
 
 public class Main {
@@ -19,6 +20,7 @@ public class Main {
         ImageUploadTokenController imageUploadTokenController = new ImageUploadTokenController();
         CatController catController = new CatController();
         WxLoginController wxLoginController = new WxLoginController();
+        UserController userController = new UserController();
 
         app.get("/api/imageUploadToken", imageUploadTokenController::getToken);
 
@@ -29,5 +31,9 @@ public class Main {
         app.post("/api/cats", catController::createCat);
 
         app.delete("/api/cats", catController::removeAllCats);
+
+        app.get("/api/users/{openId}", userController::getUserByOpenId);
+
+        app.post("/api/users", userController::createUser);
     }
 }
