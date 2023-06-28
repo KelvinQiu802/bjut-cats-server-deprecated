@@ -13,3 +13,12 @@
 | POST       | /api/users                         | Create a user                  | JSON            |
 | POST       | /api/images                        | Add a image                    | JSON            |
 | GET        | /api/images/{state}                | Get images by state            | JSON            |
+
+## Deployment
+
+```shell
+$ lsof -i :7070
+$ kill xxx
+$ nohup java -jar xxx.jar &
+```
+
