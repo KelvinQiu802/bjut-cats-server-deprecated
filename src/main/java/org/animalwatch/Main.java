@@ -35,5 +35,7 @@ public class Main {
         app.post("/api/users", userController::createUser);
 
         app.post("/api/images", catImageController::addImage);
+
+        app.get("/api/images/{state}", catImageController::getImagesByState);
     }
 }

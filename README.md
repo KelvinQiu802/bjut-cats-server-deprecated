@@ -12,3 +12,4 @@
 | GET        | /api/users/{openId}                | Get user by openId             | JSON            |
 | POST       | /api/users                         | Create a user                  | JSON            |
 | POST       | /api/images                        | Add a image                    | JSON            |
+| GET        | /api/images/{state}                | Get images by state            | JSON            |

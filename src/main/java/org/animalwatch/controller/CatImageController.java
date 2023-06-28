@@ -21,4 +21,10 @@ public class CatImageController {
         ctx.status(HttpStatus.NO_CONTENT);
         logger.info("Add a Cat Image");
     }
+
+    public void getImagesByState(Context ctx) {
+        String state = ctx.pathParam("state");
+        ctx.json(catImageDao.getImagesByState(state));
+        logger.info("GET images by state");
+    }
 }
