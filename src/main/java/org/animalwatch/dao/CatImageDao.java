@@ -56,6 +56,22 @@ public class CatImageDao {
         return images;
     }
 
+    public void updateImage(CatImage image) {
+        try (
+                Connection conn = DBUtils.connectToDB();
+                PreparedStatement st = conn.prepareStatement("UPDATE images SET state = ?, campus = ?, catName = ? " +
+                        "WHERE imageUrl = ?;");
+        ) {
+            st.setString(1, image.state().toString());
+            st.setString(2, image.campus().toString());
+            st.setString(3, image.catName());
+            st.setString(4, image.imageUrl());
+            st.executeUpdate();
+        } catch (SQLException e) {
+            logger.error("Can not connect to db OR do the operation");
+        }
+    }
+
     private CatImage constructCatImage(ResultSet rs) throws SQLException {
         return new CatImage(rs.getString("openId"),
                 rs.getString("imageUrl"),

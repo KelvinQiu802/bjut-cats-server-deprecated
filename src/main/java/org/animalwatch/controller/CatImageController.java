@@ -27,4 +27,11 @@ public class CatImageController {
         ctx.json(catImageDao.getImagesByState(state));
         logger.info("GET images by state");
     }
+
+    public void updateImage(Context ctx) {
+        CatImage image = ctx.bodyAsClass(CatImage.class);
+        catImageDao.updateImage(image);
+        ctx.status(HttpStatus.NO_CONTENT);
+        logger.info("Update image data");
+    }
 }

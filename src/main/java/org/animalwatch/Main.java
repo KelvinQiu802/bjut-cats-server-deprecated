@@ -37,5 +37,7 @@ public class Main {
         app.post("/api/images", catImageController::addImage);
 
         app.get("/api/images/{state}", catImageController::getImagesByState);
+
+        app.put("/api/images", catImageController::updateImage);
     }
 }
