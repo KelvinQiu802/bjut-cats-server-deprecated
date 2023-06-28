@@ -15,12 +15,14 @@ public class CatImageDao {
     public void addImage(CatImage image) {
         try (
                 Connection conn = DBUtils.connectToDB();
-                PreparedStatement st = conn.prepareStatement("INSERT INTO images (openId, imageUrl, state) VALUES (?," +
-                        " ?, ?)");
+                PreparedStatement st = conn.prepareStatement("INSERT INTO images (openId, imageUrl, state, campus, " +
+                        "catName) VALUES (?, ?, ?, ?, ?);");
         ) {
             st.setString(1, image.openId());
             st.setString(2, image.imageUrl());
             st.setString(3, image.state().toString());
+            st.setString(4, image.campus().toString());
+            st.setString(5, image.catName());
             st.executeUpdate();
         } catch (SQLException e) {
             logger.error("Can not connect to db OR operation failed", e);

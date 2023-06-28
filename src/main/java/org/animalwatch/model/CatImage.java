@@ -3,6 +3,8 @@ package org.animalwatch.model;
 public record CatImage(
         String openId,
         String imageUrl,
-        ImageState state
+        ImageState state,
+        Campus campus,
+        String catName
 ) {
 }
