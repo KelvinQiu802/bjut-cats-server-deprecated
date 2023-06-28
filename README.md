@@ -11,3 +11,4 @@
 | DELETE     | /api/cats                          | Remove all cats from the table | JSON            |
 | GET        | /api/users/{openId}                | Get user by openId             | JSON            |
 | POST       | /api/users                         | Create a user                  | JSON            |
+| POST       | /api/images                        | Add a image                    | JSON            |
