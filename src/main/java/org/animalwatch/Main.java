@@ -19,6 +19,7 @@ public class Main {
         WxLoginController wxLoginController = new WxLoginController();
         UserController userController = new UserController();
         CatImageController catImageController = new CatImageController();
+        ImageLikeController imageLikeController = new ImageLikeController();
 
         app.get("/api/imageUploadToken", imageUploadTokenController::getToken);
 
@@ -39,5 +40,9 @@ public class Main {
         app.get("/api/images/{state}", catImageController::getImagesByState);
 
         app.put("/api/images", catImageController::updateImage);
+
+        app.post("/api/likes", imageLikeController::addLike);
+
+        app.get("/api/likes", imageLikeController::getLikesBy);
     }
 }
