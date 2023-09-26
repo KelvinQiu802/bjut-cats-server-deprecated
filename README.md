@@ -20,6 +20,10 @@
 ## Deployment
 
 ```shell
+$ mvn package assembly:single
+```
+
+```shell
 $ lsof -i :7070
 $ kill xxx
 $ nohup java -jar xxx.jar &
