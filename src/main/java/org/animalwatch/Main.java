@@ -20,6 +20,7 @@ public class Main {
         UserController userController = new UserController();
         CatImageController catImageController = new CatImageController();
         ImageLikeController imageLikeController = new ImageLikeController();
+        ArticleController articleController = new ArticleController();
 
         app.get("/api/imageUploadToken", imageUploadTokenController::getToken);
 
@@ -44,5 +45,7 @@ public class Main {
         app.post("/api/likes", imageLikeController::addLike);
 
         app.get("/api/likes", imageLikeController::getLikesBy);
+
+        app.get("/api/articles", articleController::getAllArticles);
     }
 }

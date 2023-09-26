@@ -15,6 +15,7 @@
 | GET        | /api/images/{state}                | Get images by state            | JSON            |
 | POST       | /api/likes                         | Add an image like              | JSON            |
 | GET        | /api/likes?by={openId OR imageUrl} | Get image likes                | JSON            |
+| GET        | /api/articles                      | Get all articles               | JSON            |
 
 ## Deployment
 
