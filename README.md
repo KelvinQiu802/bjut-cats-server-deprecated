@@ -1,4 +1,4 @@
-# BJUT Cats Server
+# BJUT Cats Server (deprecated)
 
 ## APIs
 
