@@ -1,5 +1,9 @@
 # BJUT Cats Server (deprecated)
 
+## !WARNING!
+
+> This project has been migrated to [this repository!!!](https://github.com/KelvinQiu802/bjut-cats-server)
+
 ## APIs
 
 | HTTP Verbs | Endpoints                          | Action                         | Response Format |
